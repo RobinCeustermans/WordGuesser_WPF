@@ -1,12 +1,47 @@
 ﻿<Window x:Class="WordGuessGame_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WordGuessGame_WPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WordGuesser" Height="450" Width="800">
     <Grid>
-
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+            <TextBlock Text="Wordguesser" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <Grid x:Name="GuessGrid" HorizontalAlignment="Center" Margin="0,20">
+                <!-- Define 6 rows and 5 columns -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Add 30 TextBoxes for user input -->
+                <ItemsControl x:Name="GuessItemsControl" Grid.RowSpan="6" Grid.ColumnSpan="5">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Rows="6" Columns="5"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="1" BorderBrush="LightGray" Margin="5">
+                                <TextBox FontSize="24" Width="50" Height="50" TextAlignment="Center" VerticalAlignment="Center"
+                                         MaxLength="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                         TextChanged="TextBox_TextChanged"/>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <Button x:Name="SubmitButton" Content="Submit guess" Click="SubmitGuess_Click" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock x:Name="StatusTextBlock" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </Window>
