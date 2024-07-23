@@ -3,9 +3,9 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
 {
     public static class TextBlockHelper
     {
-        public static void UpdateStatus(ref string statusTextBlock, string message)
+        public static string UpdateStatus(string currentStatus, string message)
         {
-            statusTextBlock = message;
+            return message;
         }
     }
 }
