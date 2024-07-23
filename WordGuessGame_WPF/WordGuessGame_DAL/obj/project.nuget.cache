@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xcQ01ldoqK0=",
+  "dgSpecHash": "q5DQhwR8iWI=",
   "success": true,
-  "projectFilePath": "C:\\projects\\Git\\backup\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj",
+  "projectFilePath": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roobi\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\roobi\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

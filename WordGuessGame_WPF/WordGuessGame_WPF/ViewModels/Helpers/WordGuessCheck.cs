@@ -1,16 +1,17 @@
-﻿namespace WordGuessGame_WPF.ViewModels
+﻿using WordGuessGame_WPF.ViewModels.Interfaces;
+
+namespace WordGuessGame_WPF.ViewModels.Helpers
 {
-    public class WordGuessCheck
+    public class WordGuessCheck : IWordGuessCheck
     {
-        private string[] wordList = { "apple", "truck", "trail", "grape", "melon" };
+        private string[] wordList = { "apple", "truck", "trail", "grape", "melon" };//temporary, future calls for reading a txt file
 
         public int CurrentAttempt { get; set; } = 0;
-
         public string CorrectWord { get; private set; }
 
         public WordGuessCheck()
         {
-            //for now just a random word, in future perhaps read it form a txt file
+            // For now just a random word, in future perhaps read it from a txt file
             Random random = new Random();
             CorrectWord = wordList[random.Next(wordList.Length)];
         }

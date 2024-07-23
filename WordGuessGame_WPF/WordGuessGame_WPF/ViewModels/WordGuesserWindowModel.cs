@@ -2,13 +2,14 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
+using WordGuessGame_WPF.ViewModels.Helpers;
+using WordGuessGame_WPF.ViewModels.Interfaces;
 
 namespace WordGuessGame_WPF.ViewModels
 {
     public class WordGuesserWindowModel : BaseViewModel
     {
-        private WordGuessCheck game;
+        private readonly IWordGuessCheck _game;
         private ObservableCollection<TextBox> _guessTextBoxes;
         private string _statusTextBlock;
         private bool _isSubmitButtonEnabled;
@@ -43,13 +44,13 @@ namespace WordGuessGame_WPF.ViewModels
             }
         }
 
-        public override string this[string columnName] => throw new NotImplementedException();
+        public override string this[string columnName] => string.Empty;
 
-        public WordGuesserWindowModel()
+        public WordGuesserWindowModel(IWordGuessCheck game)
         {
-            game = new WordGuessCheck();
+            _game = game;
             InitializeGuessGrid();
-            IsSubmitButtonEnabled = true; // Initially enable the submit button
+            IsSubmitButtonEnabled = true;
         }
 
         private void InitializeGuessGrid()
@@ -58,200 +59,24 @@ namespace WordGuessGame_WPF.ViewModels
 
             for (int i = 0; i < 30; i++)
             {
-                var textBox = new TextBox
-                {
-                    FontSize = 24,
-                    Width = 50,
-                    Height = 50,
-                    TextAlignment = TextAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    HorizontalContentAlignment = HorizontalAlignment.Center,
-                    VerticalContentAlignment = VerticalAlignment.Center,
-                    MaxLength = 1,
-                    IsEnabled = false  // Initially disable all TextBoxes
-                };
-
-                // Register TextChanged event handler
-                textBox.TextChanged += TextBoxTextChangedHandler;
-
-                // Register PreviewKeyDown event handler to detect Enter key press and Backspace
-                textBox.PreviewKeyDown += TextBoxPreviewKeyDownHandler;
-
+                var textBox = TextBoxHelper.CreateTextBox(TextBoxTextChangedHandler, TextBoxPreviewKeyDownHandler);
                 _guessTextBoxes.Add(textBox);
             }
 
-            // Enable the TextBoxes for the first row
-            EnableTextBoxesForCurrentRow();
-        }
-
-        private void SubmitGuess()
-        {
-            if (game.CurrentAttempt >= 6)
-            {
-                StatusTextBlock = "Game Over! You've used all attempts.";
-                return;
-            }
-
-            // Collect current guess
-            int startIndex = game.CurrentAttempt * 5;
-            List<string> guessLetters = new List<string>();
-
-            for (int i = startIndex; i < startIndex + 5; i++)
-            {
-                var textBox = _guessTextBoxes[i];
-                guessLetters.Add(textBox.Text.Trim().ToLower());
-            }
-
-            string guess = string.Join("", guessLetters);
-
-            if (guess.Length != 5)
-            {
-                MessageBox.Show("Guess must be 5 letters long.", "Invalid Guess", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            string result = game.CheckGuess(guess);
-
-            // Track which positions in the guess have been highlighted
-            HashSet<char> highlightedLetters = new HashSet<char>();
-
-            // Count occurrences of each letter in guess and correct word
-            Dictionary<char, int> guessLetterCounts = new Dictionary<char, int>();
-            Dictionary<char, int> correctLetterCounts = new Dictionary<char, int>();
-
-            foreach (char c in guess)
-            {
-                if (guessLetterCounts.ContainsKey(c))
-                    guessLetterCounts[c]++;
-                else
-                    guessLetterCounts[c] = 1;
-            }
-
-            foreach (char c in game.CorrectWord)
-            {
-                if (correctLetterCounts.ContainsKey(c))
-                    correctLetterCounts[c]++;
-                else
-                    correctLetterCounts[c] = 1;
-            }
-
-            // Determine the maximum number of mismatches that can be colored yellow for each letter
-            Dictionary<char, int> maxYellowCounts = new Dictionary<char, int>();
-
-            foreach (char c in guessLetterCounts.Keys)
-            {
-                if (correctLetterCounts.ContainsKey(c))
-                {
-                    int maxCount = Math.Min(guessLetterCounts[c], correctLetterCounts[c]);
-                    maxYellowCounts[c] = maxCount;
-                }
-                else
-                {
-                    maxYellowCounts[c] = 0;
-                }
-            }
-
-            for (int i = 0; i < result.Length; i++)
-            {
-                _guessTextBoxes[startIndex + i].Text = guess[i].ToString().ToUpper();
-
-                // Set background color based on result
-                switch (result[i])
-                {
-                    case '1':
-                        _guessTextBoxes[startIndex + i].Background = Brushes.Green; // Correct letter in the correct place
-                        break;
-                    case '2':
-                        char guessedChar = guess[i];
-
-                        // Check if we can still color this letter yellow
-                        if (maxYellowCounts[guessedChar] > 0)
-                        {
-                            _guessTextBoxes[startIndex + i].Background = Brushes.Yellow; // Correct letter in the wrong place
-                            maxYellowCounts[guessedChar]--;
-                        }
-                        else
-                        {
-                            _guessTextBoxes[startIndex + i].Background = Brushes.White; // Incorrect letter
-                        }
-                        break;
-                    default:
-                        _guessTextBoxes[startIndex + i].Background = Brushes.White; // Incorrect letter
-                        break;
-                }
-            }
-
-            // Disable current row's TextBoxes
-            for (int i = startIndex; i < startIndex + 5; i++)
-            {
-                _guessTextBoxes[i].IsEnabled = false;
-            }
-
-            // Move to the next row if the game is not over
-            if (!game.IsGameOver() && !game.IsCorrectGuess(guess))
-            {
-                game.CurrentAttempt++;
-                EnableTextBoxesForCurrentRow();
-
-                // Set focus to the first TextBox of the next row
-                int nextRowStartIndex = game.CurrentAttempt * 5;
-                if (nextRowStartIndex < _guessTextBoxes.Count)
-                {
-                    _guessTextBoxes[nextRowStartIndex].Focus();
-                }
-            }
-
-            if (game.IsCorrectGuess(guess))
-            {
-                StatusTextBlock = "Congratulations! You guessed the word!";
-
-                // Disable all TextBoxes after correct guess
-                foreach (var textBox in _guessTextBoxes)
-                {
-                    textBox.IsEnabled = false;
-                }
-
-                // Disable and grey out the SubmitButton
-                IsSubmitButtonEnabled = false;
-            }
-            else if (game.IsGameOver())
-            {
-                StatusTextBlock = "Game Over! You've used all attempts.";
-                IsSubmitButtonEnabled = false; // Disable the button
-            }
-            else
-            {
-                StatusTextBlock = $"Attempts left: {6 - game.CurrentAttempt}";
-            }
+            TextBoxHelper.EnableTextBoxesForCurrentRow(_guessTextBoxes, _game.CurrentAttempt);
         }
 
         private void TextBoxPreviewKeyDownHandler(object sender, KeyEventArgs e)
         {
-            var textBox = sender as TextBox;
-            if (textBox != null)
+            if (sender is TextBox textBox)
             {
                 if (e.Key == Key.Enter)
                 {
-                    // Call SubmitGuess_Click when Enter key is pressed
-                    SubmitGuess();
+                    Execute("SubmitGuess");
                 }
                 else if (e.Key == Key.Back)
                 {
-                    int currentIndex = _guessTextBoxes.IndexOf(textBox);
-                    int currentRowStartIndex = game.CurrentAttempt * 5;
-
-                    // Clear the text of the last filled TextBox in the current row
-                    for (int i = currentIndex; i >= currentRowStartIndex; i--)
-                    {
-                        if (i >= 0 && !string.IsNullOrEmpty(_guessTextBoxes[i].Text))
-                        {
-                            _guessTextBoxes[i].Text = "";
-                            _guessTextBoxes[i].Focus();
-                            break;
-                        }
-                    }
-
-                    // Prevent further handling of the Back key
+                    TextBoxHelper.HandleTextBoxPreviewKeyDown(sender, e, _guessTextBoxes, _game.CurrentAttempt);
                     e.Handled = true;
                 }
             }
@@ -259,68 +84,106 @@ namespace WordGuessGame_WPF.ViewModels
 
         private void TextBoxTextChangedHandler(object sender, TextChangedEventArgs e)
         {
-            var textBox = (TextBox)sender;
-            if (textBox != null && textBox.Text.Length == 1)
+            TextBoxHelper.HandleTextBoxTextChanged(sender, _guessTextBoxes);
+        }
+
+        private void SubmitGuess()
+        {
+            if (_game.CurrentAttempt >= 6)
             {
-                int currentIndex = _guessTextBoxes.IndexOf(textBox);
-                int currentColumn = currentIndex % 5;  // Determine current column index
+                TextBlockHelper.UpdateStatus(ref _statusTextBlock, "Game Over! You've used all attempts.");
+                return;
+            }
 
-                // Set the typed letter to uppercase (assuming input is lowercase)
-                textBox.Text = textBox.Text.ToUpper();
+            var guess = CollectCurrentGuess();
+            if (guess.Length != 5)
+            {
+                ShowInvalidGuessMessage();
+                return;
+            }
 
-                // Move focus to the next TextBox in the current row and column
-                if (currentColumn < 4)
-                {
-                    // Calculate index of next column in the same row
-                    int nextColumnIndex = currentIndex + 1;
+            var result = _game.CheckGuess(guess);
+            ProcessGuessResult(guess, result);
 
-                    // Focus the next TextBox in the same row
-                    _guessTextBoxes[nextColumnIndex].Focus();
-                }
-                else
-                {
-                    // If at the last column of the current row, move focus back to the same TextBox
-                    textBox.Focus();
-                }
+            if (_game.IsCorrectGuess(guess))
+            {
+                TextBlockHelper.UpdateStatus(ref _statusTextBlock, "Congratulations! You guessed the word!");
+                TextBoxHelper.DisableAllTextBoxes(_guessTextBoxes);
+                IsSubmitButtonEnabled = false;
+            }
+            else if (_game.IsGameOver())
+            {
+                TextBlockHelper.UpdateStatus(ref _statusTextBlock, "Game Over! You've used all attempts.");
+                IsSubmitButtonEnabled = false;
+            }
+            else
+            {
+                TextBlockHelper.UpdateStatus(ref _statusTextBlock, $"Attempts left: {6 - _game.CurrentAttempt}");
+                _game.CurrentAttempt++;
+                TextBoxHelper.EnableTextBoxesForCurrentRow(_guessTextBoxes, _game.CurrentAttempt);
+                TextBoxHelper.FocusNextRowFirstTextBox(_guessTextBoxes, _game.CurrentAttempt);
             }
         }
 
-        private void EnableTextBoxesForCurrentRow()
+        private string CollectCurrentGuess()
         {
-            int startIndex = game.CurrentAttempt * 5;
+            int startIndex = _game.CurrentAttempt * 5;
+            var guessLetters = new List<string>();
+
             for (int i = startIndex; i < startIndex + 5; i++)
             {
-                if (i < _guessTextBoxes.Count)
-                {
-                    _guessTextBoxes[i].IsEnabled = true;
-                    _guessTextBoxes[i].Text = "";  // Clear previous guess
-                }
+                var textBox = _guessTextBoxes[i];
+                guessLetters.Add(textBox.Text.Trim().ToLower());
             }
+
+            return string.Join("", guessLetters);
+        }
+
+        private void ShowInvalidGuessMessage()
+        {
+            MessageBox.Show("Guess must be 5 letters long.", "Invalid Guess", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void ProcessGuessResult(string guess, string result)
+        {
+            int startIndex = _game.CurrentAttempt * 5;
+            var letterCounts = CalculateLetterCounts(guess);
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                var textBox = _guessTextBoxes[startIndex + i];
+                textBox.Text = guess[i].ToString().ToUpper();
+                TextBoxHelper.UpdateTextBoxBackground(textBox, result[i], guess[i], letterCounts);
+                textBox.IsEnabled = false;
+            }
+        }
+
+        private Dictionary<char, int> CalculateLetterCounts(string guess)
+        {
+            var letterCounts = new Dictionary<char, int>();
+
+            foreach (var c in guess)
+            {
+                if (!letterCounts.ContainsKey(c))
+                {
+                    letterCounts[c] = 0;
+                }
+                letterCounts[c]++;
+            }
+
+            return letterCounts;
         }
 
         public override bool CanExecute(object? parameter)
         {
-            if (parameter == null)
-                return false;
-            switch (parameter.ToString())
-            {
-                case "SubmitGuess":
-                    return true;
-                default:
-                    return false;
-            }
+            return parameter?.ToString() == "SubmitGuess";
         }
 
         public override void Execute(object? parameter)
         {
-            if (parameter == null)
-                return;
-
-            switch (parameter.ToString())
+            if (parameter?.ToString() == "SubmitGuess")
             {
-                case "SubmitGuess":
-                    SubmitGuess();
-                    break;
+                SubmitGuess();
             }
         }
     }

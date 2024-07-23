@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WordGuessGame_WPF.Views;
+﻿using WordGuessGame_WPF.Views;
 
 namespace WordGuessGame_WPF.ViewModels
 {

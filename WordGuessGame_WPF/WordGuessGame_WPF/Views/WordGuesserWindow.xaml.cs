@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using WordGuessGame_WPF.ViewModels;
+using WordGuessGame_WPF.ViewModels.Helpers;
 
 namespace WordGuessGame_WPF.Views
 {
@@ -11,7 +12,9 @@ namespace WordGuessGame_WPF.Views
         public WordGuesserWindow()
         {
             InitializeComponent();
-            DataContext = new WordGuesserWindowModel();
+            var game = new WordGuessCheck();
+            var viewModel = new WordGuesserWindowModel(game);
+            DataContext = viewModel;
         }
     }
 }

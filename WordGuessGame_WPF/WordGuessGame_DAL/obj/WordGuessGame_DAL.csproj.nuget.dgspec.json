@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\Git\\backup\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj": {}
+    "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj": {}
   },
   "projects": {
-    "C:\\projects\\Git\\backup\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj": {
+    "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\Git\\backup\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj",
+        "projectUniqueName": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj",
         "projectName": "WordGuessGame_DAL",
-        "projectPath": "C:\\projects\\Git\\backup\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj",
+        "projectPath": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\WordGuessGame_DAL.csproj",
         "packagesPath": "C:\\Users\\roobi\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\Git\\backup\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\obj\\",
+        "outputPath": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
