@@ -24,10 +24,6 @@ namespace WordGuessGame_DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Game>()
-                .HasIndex(p => p.PlayerName)
-                .IsUnique();
-
             base.OnModelCreating(modelBuilder);
         }
     }
