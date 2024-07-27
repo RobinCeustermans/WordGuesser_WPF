@@ -1,58 +1,65 @@
-﻿using WordGuessGame_WPF.ViewModels.Interfaces;
+﻿using WordGuessGame_WPF.Models;
+using WordGuessGame_WPF.ViewModels.Interfaces;
 
 namespace WordGuessGame_WPF.ViewModels.Helpers
 {
     public class WordGuessCheck : IWordGuessCheck
     {
-        private string[] wordList = { "apple", "truck", "trail", "grape", "melon" };//temporary, future calls for reading a txt file
-
+        private GameModel _gameModel;
+        public int CorrectWordLength { get; private set; }
         public int CurrentAttempt { get; set; } = 0;
         public string CorrectWord { get; private set; }
-
-        public Dictionary<char, int> CorrectWordLetters { get; set; }
-        public Dictionary<char, int> GuessedWordLetters { get; set; }
-
-        public WordGuessCheck()
+        
+        public WordGuessCheck(GameModel gameModel)
         {
-            // For now just a random word, in future perhaps read it from a txt file
-            Random random = new Random();
-            CorrectWord = wordList[random.Next(wordList.Length)];
+            _gameModel = gameModel;
+            this.CorrectWord = WordGuessCheckHelper.GetCorrectWord(gameModel.PotentialWords);
+            this.CorrectWordLength = this.CorrectWord.Length;
         }
 
         public string CheckGuess(string guess)
         {
-            char[] result = new char[5];
-            var answerDict = ConvertWordToDictionary(CorrectWord);
-            var guessDict = ConvertWordToDictionary(guess);
+            char[] result = new char[guess.Length];
+            var answerDict = ConvertWordToDictionary(this.CorrectWord);
 
+            // First pass: Check for correct letters in the correct place
             for (int i = 0; i < guess.Length; i++)
             {
-                if (guess[i] == CorrectWord[i] && answerDict.ContainsKey(guess[i]) && answerDict[guess[i]] > 0)
+                if (guess[i] == this.CorrectWord[i] && answerDict[guess[i]] > 0)
                 {
-                    DecreaseCounterDictionary(answerDict, CorrectWord, i);
                     result[i] = '1'; // Correct letter in the correct place
-                }
-                else if (answerDict.ContainsKey(guess[i]) && answerDict[guess[i]] > 0)
-                {
-                    DecreaseCounterDictionary(answerDict, guess, i);
-                    result[i] = '2'; // Correct letter in the wrong place
-                }
-                else
-                {
-                    result[i] = '0'; // Incorrect letter
+                    answerDict[guess[i]]--; // Decrease count of matched letter
                 }
             }
+
+            // Second pass: Check for correct letters in the wrong place
+            for (int i = 0; i < guess.Length; i++)
+            {
+                if (result[i] != '1') // Skip already matched letters
+                {
+                    if (answerDict.ContainsKey(guess[i]) && answerDict[guess[i]] > 0)
+                    {
+                        result[i] = '2'; // Correct letter in the wrong place
+                        answerDict[guess[i]]--; // Decrease count of matched letter
+                    }
+                    else
+                    {
+                        result[i] = '0'; // Incorrect letter
+                    }
+                }
+            }
+
             return new string(result);
         }
 
         public bool IsCorrectGuess(string guess)
         {
-            return guess == CorrectWord;
+            return guess == this.CorrectWord;
         }
 
         public bool IsGameOver()
         {
-            return CurrentAttempt >= 6;
+            return CurrentAttempt >= _gameModel.TurnsAmount;
         }
 
         //local helpers

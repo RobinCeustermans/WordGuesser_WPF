@@ -1,0 +1,12 @@
+star
+blue
+cake
+trap
+truck
+melon
+lemon
+apple
+orange
+banana
+letter
+desert

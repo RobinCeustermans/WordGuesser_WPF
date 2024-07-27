@@ -5,32 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WordGuessGame_WPF.Views"
         mc:Ignorable="d"
-        Title="WordGuesserWindow" Height="550" Width="800">
+        Title="WordGuesserWindow" Height="600" Width="700">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
             <TextBlock Text="Wordguesser" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
             <Grid x:Name="GuessGrid" HorizontalAlignment="Center" Margin="0,20">
-                <!-- Define 6 rows and 5 columns -->
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <!-- Add 30 TextBoxes for user input -->
-                <ItemsControl ItemsSource="{Binding GuessTextBoxes}" Grid.RowSpan="6" Grid.ColumnSpan="5">
+                <ItemsControl ItemsSource="{Binding GuessTextBoxes}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <UniformGrid Rows="6" Columns="5"/>
+                            <UniformGrid Rows="{Binding CurrentGame.TurnsAmount}" Columns="{Binding CurrentGame.WordLength}"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>

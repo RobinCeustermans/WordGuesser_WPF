@@ -12,9 +12,6 @@ namespace WordGuessGame_WPF.Views
         public WordGuesserWindow()
         {
             InitializeComponent();
-            var game = new WordGuessCheck();
-            var viewModel = new WordGuesserWindowModel(game);
-            DataContext = viewModel;
         }
     }
 }

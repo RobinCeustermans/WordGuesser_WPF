@@ -42,3 +42,4 @@ C:\projects\Git\backup\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_DAL\obj\D
 C:\projects\Git\backup\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_DAL\obj\Debug\net8.0\WordGuessGame_DAL.pdb
 C:\projects\Git\backup\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_DAL\obj\Debug\net8.0\WordGuessGame_DAL.genruntimeconfig.cache
 C:\projects\Git\backup\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_DAL\obj\Debug\net8.0\ref\WordGuessGame_DAL.dll
+C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_DAL\bin\Debug\net8.0\Files\words.txt

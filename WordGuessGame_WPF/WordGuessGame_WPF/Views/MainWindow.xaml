@@ -18,7 +18,7 @@
         <TextBlock Text="Welcome, play a game or check the high scores" Grid.Row="0" Grid.Column="1" 
                 VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-        <Button x:Name="PlayGame" Content="Play game" Grid.Row="1" Grid.Column="0" Command="{Binding}" CommandParameter="OpenWordGuesserGame"
+        <Button x:Name="PlayGame" Content="Play game" Grid.Row="1" Grid.Column="0" Command="{Binding}" CommandParameter="OpenGameConfiguration"
              HorizontalAlignment="Center" VerticalAlignment="Center" Width="100px" />
 
 

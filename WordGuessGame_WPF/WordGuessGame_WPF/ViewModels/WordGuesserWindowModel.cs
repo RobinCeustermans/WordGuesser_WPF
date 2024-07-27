@@ -5,13 +5,15 @@ using WordGuessGame_WPF.ViewModels.Helpers;
 using WordGuessGame_WPF.ViewModels.Interfaces;
 using WordGuessGame_WPF.ViewModels;
 using System.Windows.Input;
-
+using WordGuessGame_WPF.Models;
 public class WordGuesserWindowModel : BaseViewModel
 {
-    private readonly IWordGuessCheck _game;
+    private readonly IWordGuessCheck _gameCheck;
     private ObservableCollection<TextBox> _guessTextBoxes;
     private string _statusTextBlock;
     private bool _isSubmitButtonEnabled;
+
+    public GameModel CurrentGame { get; private set; }
 
     public string StatusTextBlock
     {
@@ -45,9 +47,11 @@ public class WordGuesserWindowModel : BaseViewModel
 
     public override string this[string columnName] => string.Empty;
 
-    public WordGuesserWindowModel(IWordGuessCheck game)
+    public WordGuesserWindowModel(IWordGuessCheck gameCheck, GameModel gameModel)
     {
-        _game = game;
+        _gameCheck = gameCheck;
+        CurrentGame = gameModel;
+
         InitializeGuessGrid();
         IsSubmitButtonEnabled = true;
     }
@@ -56,13 +60,13 @@ public class WordGuesserWindowModel : BaseViewModel
     {
         _guessTextBoxes = new ObservableCollection<TextBox>();
 
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < CurrentGame.TurnsAmount * CurrentGame.WordLength; i++)
         {
             var textBox = TextBoxHelper.CreateTextBox(TextBoxTextChangedHandler, TextBoxPreviewKeyDownHandler);
             _guessTextBoxes.Add(textBox);
         }
 
-        TextBoxHelper.EnableTextBoxesForCurrentRow(_guessTextBoxes, _game.CurrentAttempt);
+        TextBoxHelper.EnableTextBoxesForCurrentRow(_guessTextBoxes, _gameCheck.CurrentAttempt, CurrentGame.WordLength);
     }
 
     private void TextBoxPreviewKeyDownHandler(object sender, KeyEventArgs e)
@@ -75,7 +79,7 @@ public class WordGuesserWindowModel : BaseViewModel
             }
             else if (e.Key == Key.Back)
             {
-                TextBoxHelper.HandleTextBoxPreviewKeyDown(sender, e, _guessTextBoxes, _game.CurrentAttempt);
+                TextBoxHelper.HandleTextBoxPreviewKeyDown(sender, e, _guessTextBoxes, _gameCheck.CurrentAttempt, CurrentGame.WordLength);
                 e.Handled = true;
             }
         }
@@ -83,53 +87,53 @@ public class WordGuesserWindowModel : BaseViewModel
 
     private void TextBoxTextChangedHandler(object sender, TextChangedEventArgs e)
     {
-        TextBoxHelper.HandleTextBoxTextChanged(sender, _guessTextBoxes);
+        TextBoxHelper.HandleTextBoxTextChanged(sender, _guessTextBoxes, CurrentGame.WordLength);
     }
 
     private void SubmitGuess()
     {
-        if (_game.CurrentAttempt >= 6)
+        if (_gameCheck.CurrentAttempt >= CurrentGame.TurnsAmount)
         {
             StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, "Game Over! You've used all attempts.");
             return;
         }
 
         var guess = CollectCurrentGuess();
-        if (guess.Length != 5)
+        if (guess.Length != CurrentGame.WordLength)
         {
             ShowInvalidGuessMessage();
             return;
         }
 
-        var result = _game.CheckGuess(guess);
+        var result = _gameCheck.CheckGuess(guess);
         ProcessGuessResult(guess, result);
 
-        _game.CurrentAttempt++;
-        if (_game.IsCorrectGuess(guess))
+        _gameCheck.CurrentAttempt++;
+        if (_gameCheck.IsCorrectGuess(guess))
         {
-            StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, $"Congratulations! You guessed the word!\nTurns needed: {_game.CurrentAttempt}");
+            StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, $"Congratulations! You guessed the word!\nTurns needed: {_gameCheck.CurrentAttempt}");
             TextBoxHelper.DisableAllTextBoxes(_guessTextBoxes);
             IsSubmitButtonEnabled = false;
         }
-        else if (_game.IsGameOver())
+        else if (_gameCheck.IsGameOver())
         {
             StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, "Game Over! You've used all attempts.");
             IsSubmitButtonEnabled = false;
         }
         else
         {
-            StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, $"Attempts left: {6 - _game.CurrentAttempt}");
-            TextBoxHelper.EnableTextBoxesForCurrentRow(_guessTextBoxes, _game.CurrentAttempt);
-            TextBoxHelper.FocusNextRowFirstTextBox(_guessTextBoxes, _game.CurrentAttempt);
+            StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, $"Attempts left: {CurrentGame.TurnsAmount - _gameCheck.CurrentAttempt}");
+            TextBoxHelper.EnableTextBoxesForCurrentRow(_guessTextBoxes, _gameCheck.CurrentAttempt, CurrentGame.WordLength);
+            TextBoxHelper.FocusNextRowFirstTextBox(_guessTextBoxes, _gameCheck.CurrentAttempt, CurrentGame.WordLength);
         }
     }
 
     private string CollectCurrentGuess()
     {
-        int startIndex = _game.CurrentAttempt * 5;
+        int startIndex = _gameCheck.CurrentAttempt * CurrentGame.WordLength;
         var guessLetters = new List<string>();
 
-        for (int i = startIndex; i < startIndex + 5; i++)
+        for (int i = startIndex; i < startIndex + CurrentGame.WordLength; i++)
         {
             var textBox = _guessTextBoxes[i];
             guessLetters.Add(textBox.Text.Trim().ToLower());
@@ -140,12 +144,12 @@ public class WordGuesserWindowModel : BaseViewModel
 
     private void ShowInvalidGuessMessage()
     {
-        MessageBox.Show("Guess must be 5 letters long.", "Invalid Guess", MessageBoxButton.OK, MessageBoxImage.Warning);
+        MessageBox.Show($"Guess must be {CurrentGame.WordLength} letters long.", "Invalid Guess", MessageBoxButton.OK, MessageBoxImage.Warning);
     }
 
     private void ProcessGuessResult(string guess, string result)
     {
-        int startIndex = _game.CurrentAttempt * 5;
+        int startIndex = _gameCheck.CurrentAttempt * CurrentGame.WordLength;
         var letterCounts = CalculateLetterCounts(guess);
 
         for (int i = 0; i < result.Length; i++)

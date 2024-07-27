@@ -18,6 +18,8 @@ namespace WordGuessGame_WPF.ViewModels
             {
                 case "OpenWordGuesserGame":
                     return true;
+                case "OpenGameConfiguration":
+                    return true;
                 default:
                     return false;
             }
@@ -32,8 +34,17 @@ namespace WordGuessGame_WPF.ViewModels
             {
                 case "OpenWordGuesserGame":
                     OpenWordGuesserGame();
+                    break;  
+                case "OpenGameConfiguration":
+                    OpenGameConfiguration();
                     break;
             }
+        }
+
+        private void OpenGameConfiguration()
+        {
+            GameConfigurationWindow gameConfigurationWindow = new GameConfigurationWindow();
+            gameConfigurationWindow.ShowDialog(); 
         }
 
         private void OpenWordGuesserGame()

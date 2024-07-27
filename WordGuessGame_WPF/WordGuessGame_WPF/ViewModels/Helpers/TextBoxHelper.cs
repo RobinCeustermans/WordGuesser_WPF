@@ -29,16 +29,16 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
             return textBox;
         }
 
-        public static void HandleTextBoxTextChanged(object sender, ObservableCollection<TextBox> textBoxes)
+        public static void HandleTextBoxTextChanged(object sender, ObservableCollection<TextBox> textBoxes, int wordLength)
         {
             if (sender is TextBox textBox && textBox.Text.Length == 1)
             {
                 int currentIndex = textBoxes.IndexOf(textBox);
-                int currentColumn = currentIndex % 5;
+                int currentColumn = currentIndex % wordLength;
 
                 textBox.Text = textBox.Text.ToUpper();
 
-                if (currentColumn < 4)
+                if (currentColumn < wordLength - 1)
                 {
                     int nextColumnIndex = currentIndex + 1;
                     textBoxes[nextColumnIndex].Focus();
@@ -50,7 +50,7 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
             }
         }
 
-        public static void HandleTextBoxPreviewKeyDown(object sender, KeyEventArgs e, ObservableCollection<TextBox> textBoxes, int currentAttempt)
+        public static void HandleTextBoxPreviewKeyDown(object sender, KeyEventArgs e, ObservableCollection<TextBox> textBoxes, int currentAttempt, int wordLength)
         {
             if (sender is TextBox textBox)
             {
@@ -61,7 +61,7 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
                 else if (e.Key == Key.Back)
                 {
                     int currentIndex = textBoxes.IndexOf(textBox);
-                    int currentRowStartIndex = currentAttempt * 5;
+                    int currentRowStartIndex = currentAttempt * wordLength;
 
                     for (int i = currentIndex; i >= currentRowStartIndex; i--)
                     {
@@ -78,10 +78,10 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
             }
         }
 
-        public static void EnableTextBoxesForCurrentRow(ObservableCollection<TextBox> textBoxes, int currentAttempt)
+        public static void EnableTextBoxesForCurrentRow(ObservableCollection<TextBox> textBoxes, int currentAttempt, int wordLength)
         {
-            int startIndex = currentAttempt * 5;
-            for (int i = startIndex; i < startIndex + 5; i++)
+            int startIndex = currentAttempt * wordLength;
+            for (int i = startIndex; i < startIndex + wordLength; i++)
             {
                 if (i < textBoxes.Count)
                 {
@@ -123,9 +123,9 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
             }
         }
 
-        public static void FocusNextRowFirstTextBox(ObservableCollection<TextBox> textBoxes, int currentAttempt)
+        public static void FocusNextRowFirstTextBox(ObservableCollection<TextBox> textBoxes, int currentAttempt, int wordLength)
         {
-            int nextRowStartIndex = currentAttempt * 5;
+            int nextRowStartIndex = currentAttempt * wordLength;
             if (nextRowStartIndex < textBoxes.Count)
             {
                 textBoxes[nextRowStartIndex].Focus();

@@ -3,28 +3,80 @@
   "WorkspaceRootPath": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\entitysets\\gameentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\entitysets\\gameentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\helpers\\wordguesscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\helpers\\wordguesscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\fileoperations\\exceptionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\fileoperations\\exceptionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\views\\wordguesserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\views\\wordguesserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\databasesettings\\dbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\databasesettings\\dbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\wordguesserwindowmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\wordguesserwindowmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\models\\gamemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\models\\gamemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\interfaces\\iwordguesscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\interfaces\\iwordguesscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\helpers\\textboxhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\helpers\\textboxhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\databaseoperation\\gamedatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\databaseoperation\\gamedatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\domainmodels\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\domainmodels\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\context\\wordguessgameentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\context\\wordguessgameentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\gameconfigurationwindowmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\gameconfigurationwindowmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\helpers\\wordguesscheckhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\helpers\\wordguesscheckhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\fileoperations\\filereader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\fileoperations\\filereader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\views\\gameconfigurationwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\views\\gameconfigurationwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\helpers\\textblockhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\helpers\\textblockhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\mainwindowmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\mainwindowmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\views\\gameconfigurationwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\views\\gameconfigurationwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\views\\wordguesserwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\views\\wordguesserwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_wpf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6B23B06-ADBC-48A7-9E89-4D8C9CE09376}|WordGuessGame_WPF\\WordGuessGame_WPF.csproj|solutionrelative:wordguessgame_wpf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|c:\\projects\\git\\wordguesser_wpf\\wordguessgame_wpf\\wordguessgame_dal\\fileoperations\\exceptionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17AADA7F-191B-43CD-BA32-5E16121D6798}|WordGuessGame_DAL\\WordGuessGame_DAL.csproj|solutionrelative:wordguessgame_dal\\fileoperations\\exceptionlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +86,250 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameEntities.cs",
-              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\EntitySets\\GameEntities.cs",
-              "RelativeDocumentMoniker": "WordGuessGame_DAL\\EntitySets\\GameEntities.cs",
-              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\EntitySets\\GameEntities.cs",
-              "RelativeToolTip": "WordGuessGame_DAL\\EntitySets\\GameEntities.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "GameConfigurationWindowModel.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\GameConfigurationWindowModel.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\GameConfigurationWindowModel.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\GameConfigurationWindowModel.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\GameConfigurationWindowModel.cs",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAkwH4AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:10:40.911Z",
+              "WhenOpened": "2024-07-27T11:08:52.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameDataManager.cs",
-              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
-              "RelativeDocumentMoniker": "WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
-              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
-              "RelativeToolTip": "WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAUAAAABAAAA",
+              "DocumentIndex": 11,
+              "Title": "FileReader.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\FileOperations\\FileReader.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_DAL\\FileOperations\\FileReader.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\FileOperations\\FileReader.cs",
+              "RelativeToolTip": "WordGuessGame_DAL\\FileOperations\\FileReader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:08:00.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExceptionLogger.cs",
-              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
-              "RelativeDocumentMoniker": "WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
-              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
-              "RelativeToolTip": "WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:04:54.367Z",
+              "WhenOpened": "2024-07-27T10:56:16.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "WordGuessGameEntities.cs",
-              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
-              "RelativeDocumentMoniker": "WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
-              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
-              "RelativeToolTip": "WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAQAAAA",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\Views\\MainWindow.xaml",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "WordGuessGame_WPF\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-27T10:50:38.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameConfigurationWindow.xaml.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAwwBAAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:04:35.193Z",
+              "WhenOpened": "2024-07-27T11:08:22.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DbSettings.cs",
-              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DatabaseSettings\\DbSettings.cs",
-              "RelativeDocumentMoniker": "WordGuessGame_DAL\\DatabaseSettings\\DbSettings.cs",
-              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DatabaseSettings\\DbSettings.cs",
-              "RelativeToolTip": "WordGuessGame_DAL\\DatabaseSettings\\DbSettings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "WordGuesserWindowModel.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\WordGuesserWindowModel.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\WordGuesserWindowModel.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\WordGuesserWindowModel.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\WordGuesserWindowModel.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAQwHcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:04:29.963Z",
+              "WhenOpened": "2024-07-27T11:57:12.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WordGuessCheck.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheck.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheck.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheck.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheck.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAcwA4AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T13:41:19.328Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DomainModels\\Game.cs",
-              "RelativeDocumentMoniker": "WordGuessGame_DAL\\DomainModels\\Game.cs",
-              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DomainModels\\Game.cs",
-              "RelativeToolTip": "WordGuessGame_DAL\\DomainModels\\Game.cs",
+              "Title": "IWordGuessCheck.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Interfaces\\IWordGuessCheck.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\Interfaces\\IWordGuessCheck.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Interfaces\\IWordGuessCheck.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\Interfaces\\IWordGuessCheck.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T18:31:02.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WordGuesserWindow.xaml",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml",
+              "RelativeToolTip": "WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-27T18:09:39.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameModel.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Models\\GameModel.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\Models\\GameModel.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Models\\GameModel.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\Models\\GameModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T11:11:18.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TextBoxHelper.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\TextBoxHelper.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\Helpers\\TextBoxHelper.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\TextBoxHelper.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\Helpers\\TextBoxHelper.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAIwB8AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T18:04:34.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GameDataManager.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
+              "RelativeToolTip": "WordGuessGame_DAL\\DataBaseOperation\\GameDataManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:04:25.559Z",
+              "WhenOpened": "2024-07-27T18:03:07.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WordGuessCheckHelper.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheckHelper.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheckHelper.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheckHelper.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\Helpers\\WordGuessCheckHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T13:46:13.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WordGuessGameEntities.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
+              "RelativeToolTip": "WordGuessGame_DAL\\Context\\WordGuessGameEntities.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T18:02:57.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TextBlockHelper.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\TextBlockHelper.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\Helpers\\TextBlockHelper.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\Helpers\\TextBlockHelper.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\Helpers\\TextBlockHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T13:46:29.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GameConfigurationWindow.xaml",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml",
+              "RelativeToolTip": "WordGuessGame_WPF\\Views\\GameConfigurationWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-27T10:50:27.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainWindowModel.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\MainWindowModel.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\MainWindowModel.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\MainWindowModel.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\MainWindowModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T10:51:02.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WordGuesserWindow.xaml.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\Views\\WordGuesserWindow.xaml.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAewBEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T11:09:41.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_WPF\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_WPF\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "WordGuessGame_WPF\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowAYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T11:35:38.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ExceptionLogger.cs",
+              "DocumentMoniker": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
+              "RelativeDocumentMoniker": "WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
+              "ToolTip": "C:\\projects\\Git\\WordGuesser_WPF\\WordGuessGame_WPF\\WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
+              "RelativeToolTip": "WordGuessGame_DAL\\FileOperations\\ExceptionLogger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T10:55:14.542Z",
               "EditorCaption": ""
             }
           ]
