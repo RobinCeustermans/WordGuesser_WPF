@@ -30,6 +30,9 @@ namespace WordGuessGame_DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<byte>("AmountOfGuesses")
+                        .HasColumnType("tinyint");
+
                     b.Property<byte>("AmountOfLetters")
                         .HasColumnType("tinyint");
 
@@ -55,7 +58,7 @@ namespace WordGuessGame_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Game");
+                    b.ToTable("Games");
                 });
 #pragma warning restore 612, 618
         }

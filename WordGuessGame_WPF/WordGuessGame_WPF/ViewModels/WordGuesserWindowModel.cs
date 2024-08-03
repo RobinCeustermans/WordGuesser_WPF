@@ -1,19 +1,24 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows;
+using System.Windows.Input;
 using WordGuessGame_WPF.ViewModels.Helpers;
 using WordGuessGame_WPF.ViewModels.Interfaces;
-using WordGuessGame_WPF.ViewModels;
-using System.Windows.Input;
 using WordGuessGame_WPF.Models;
+using WordGuessGame_DAL.DomainModels;
+using WordGuessGame_DAL.DataBaseOperation;
+using WordGuessGame_WPF.ViewModels;
+
 public class WordGuesserWindowModel : BaseViewModel
 {
     private readonly IWordGuessCheck _gameCheck;
+    private readonly GameDataManager _gameDataManager;
     private ObservableCollection<TextBox> _guessTextBoxes;
     private string _statusTextBlock;
     private bool _isSubmitButtonEnabled;
 
-    public GameModel CurrentGame { get; private set; }
+    public GuessGameModel CurrentGame { get; private set; }
+    public Game Game { get; private set; }
 
     public string StatusTextBlock
     {
@@ -47,12 +52,14 @@ public class WordGuesserWindowModel : BaseViewModel
 
     public override string this[string columnName] => string.Empty;
 
-    public WordGuesserWindowModel(IWordGuessCheck gameCheck, GameModel gameModel)
+    public WordGuesserWindowModel(IWordGuessCheck gameCheck, GameDataManager gameDataManager, GuessGameModel gameModel)
     {
         _gameCheck = gameCheck;
+        _gameDataManager = gameDataManager;
         CurrentGame = gameModel;
 
         InitializeGuessGrid();
+        InitializeGame();
         IsSubmitButtonEnabled = true;
     }
 
@@ -67,6 +74,25 @@ public class WordGuesserWindowModel : BaseViewModel
         }
 
         TextBoxHelper.EnableTextBoxesForCurrentRow(_guessTextBoxes, _gameCheck.CurrentAttempt, CurrentGame.WordLength);
+    }
+
+    private void InitializeGame()
+    {
+        Game = new Game
+        {
+            PlayerName = CurrentGame.PlayerName,
+            Start = DateTime.Now,
+            AmountOfLetters = CurrentGame.WordLength,
+            NumberOfTurns = CurrentGame.TurnsAmount
+        };
+    }
+
+    private void FinishGame(bool correctlyGuessed)
+    {
+        Game.End = DateTime.Now;
+        Game.GuessedCorrectly = correctlyGuessed;
+        Game.CorrectWord = _gameCheck.CorrectWord;
+        Game.AmountOfGuesses = _gameCheck.CurrentAttempt;
     }
 
     private void TextBoxPreviewKeyDownHandler(object sender, KeyEventArgs e)
@@ -114,11 +140,15 @@ public class WordGuesserWindowModel : BaseViewModel
             StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, $"Congratulations! You guessed the word!\nTurns needed: {_gameCheck.CurrentAttempt}");
             TextBoxHelper.DisableAllTextBoxes(_guessTextBoxes);
             IsSubmitButtonEnabled = false;
+            FinishGame(true);
+            _gameDataManager.SaveGame(Game);
         }
         else if (_gameCheck.IsGameOver())
         {
             StatusTextBlock = TextBlockHelper.UpdateStatus(StatusTextBlock, "Game Over! You've used all attempts.");
             IsSubmitButtonEnabled = false;
+            FinishGame(false);
+            _gameDataManager.SaveGame(Game);
         }
         else
         {

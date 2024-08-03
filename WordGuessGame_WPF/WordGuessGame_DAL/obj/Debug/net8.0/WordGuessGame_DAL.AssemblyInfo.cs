@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordGuessGame_DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e303dac99864721f7458d8e7fcd340e4aff49ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab44dd00c558acffe46879dd9e0cd8395e2368aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordGuessGame_DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordGuessGame_DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

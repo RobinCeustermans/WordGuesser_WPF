@@ -30,9 +30,9 @@ namespace WordGuessGame_DAL.FileOperations
             return words;
         }
 
-        public static List<int> GetWordLengths(List<string> words)
+        public static List<byte> GetWordLengths(List<string> words)
         {
-            var wordLengths = words.Select(word => word.Length).Distinct().ToList();
+            var wordLengths = words.Select(word => (byte)word.Length).Distinct().ToList();
             return wordLengths;
         }
     }

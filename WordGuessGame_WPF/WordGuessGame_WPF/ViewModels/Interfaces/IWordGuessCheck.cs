@@ -2,7 +2,7 @@
 {
     public interface IWordGuessCheck
     {
-        int CurrentAttempt { get; set; }
+        byte CurrentAttempt { get; set; }
         string CorrectWord { get; }
         string CheckGuess(string guess);
         bool IsCorrectGuess(string guess);

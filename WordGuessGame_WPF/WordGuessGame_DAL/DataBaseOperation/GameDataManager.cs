@@ -1,28 +1,29 @@
-﻿using WordGuessGame_DAL.DomainModels;
-using WordGuessGame_DAL.EntitySets;
+﻿using WordGuessGame_DAL.Context;
+using WordGuessGame_DAL.DomainModels;
 using WordGuessGame_DAL.FileOperations;
 
 namespace WordGuessGame_DAL.DataBaseOperation
 {
     public class GameDataManager
     {
-        public static List<Game> GetGames()
+        private readonly WordGuessGameEntities _context;
+
+        public GameDataManager(WordGuessGameEntities context)
         {
-            using (GameEntities gameEntities =  new GameEntities())
-            {
-                return gameEntities.Games.ToList();
-            }
+            _context = context;
         }
 
-        public static int SaveGame(Game game)
+        public List<Game> GetGames()
+        {
+            return _context.Games.ToList();
+        }
+
+        public int SaveGame(Game game)
         {
             try
             {
-                using (GameEntities gameEntities = new GameEntities())
-                {
-                    gameEntities.Games.Add(game);
-                    return gameEntities.SaveChanges();
-                }
+                _context.Games.Add(game);
+                return _context.SaveChanges();
             }
             catch (Exception ex)
             {

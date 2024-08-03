@@ -21,6 +21,8 @@ namespace WordGuessGame_DAL.DomainModels
 
         public byte NumberOfTurns { get; set; }
 
+        public byte AmountOfGuesses { get; set; }
+
         public bool GuessedCorrectly { get; set; }
     }
 }

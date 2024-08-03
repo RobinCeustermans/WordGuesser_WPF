@@ -1,19 +1,20 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
+﻿using System.Windows;
 using WordGuessGame_DAL.FileOperations;
 using WordGuessGame_WPF.Models;
 using WordGuessGame_WPF.ViewModels.Helpers;
 using WordGuessGame_WPF.Views;
+using WordGuessGame_DAL.DataBaseOperation;
+using WordGuessGame_DAL.Context;
 
 namespace WordGuessGame_WPF.ViewModels
 {
     public class GameConfigurationWindowModel : BaseViewModel
     {
         private readonly Window _window;
-        private int? _turnsAmount;
+        private byte? _turnsAmount;
         private string _playerName;
-        private int _selectedWordLength;
-        private List<int> _wordLengths;
+        private byte _selectedWordLength;
+        private List<byte> _wordLengths;
         private List<string> _words;
 
         public GameConfigurationWindowModel(Window window)
@@ -21,8 +22,8 @@ namespace WordGuessGame_WPF.ViewModels
             _window = window;
             ReadFile();
         }
-  
-        public int? TurnsAmount
+
+        public byte? TurnsAmount
         {
             get => _turnsAmount;
             set
@@ -52,8 +53,8 @@ namespace WordGuessGame_WPF.ViewModels
             }
         }
 
-        //for dropdown
-        public int SelectedWordLength
+        // For dropdown
+        public byte SelectedWordLength
         {
             get => _selectedWordLength;
             set
@@ -63,7 +64,7 @@ namespace WordGuessGame_WPF.ViewModels
             }
         }
 
-        public List<int> WordLengths
+        public List<byte> WordLengths
         {
             get => _wordLengths;
             set
@@ -116,8 +117,8 @@ namespace WordGuessGame_WPF.ViewModels
                 return;
             }
 
-            var gameModel = new GameModel
-            { 
+            var gameModel = new GuessGameModel
+            {
                 PlayerName = PlayerName,
                 WordLength = SelectedWordLength,
                 TurnsAmount = TurnsAmount.Value,
@@ -126,7 +127,11 @@ namespace WordGuessGame_WPF.ViewModels
 
             var gameChecker = new WordGuessCheck(gameModel);
 
-            WordGuesserWindowModel viewModel = new WordGuesserWindowModel(gameChecker, gameModel);
+            // Create the context and GameDataManager
+            var context = new WordGuessGameEntities();
+            var gameDataManager = new GameDataManager(context);
+
+            WordGuesserWindowModel viewModel = new WordGuesserWindowModel(gameChecker, gameDataManager, gameModel);
 
             WordGuesserWindow wordGuesserWindow = new WordGuesserWindow
             {

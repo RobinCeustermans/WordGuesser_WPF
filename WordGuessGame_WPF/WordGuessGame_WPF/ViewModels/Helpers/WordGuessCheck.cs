@@ -5,16 +5,16 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
 {
     public class WordGuessCheck : IWordGuessCheck
     {
-        private GameModel _gameModel;
-        public int CorrectWordLength { get; private set; }
-        public int CurrentAttempt { get; set; } = 0;
+        private GuessGameModel _gameModel;
+        public byte CorrectWordLength { get; private set; }
+        public byte CurrentAttempt { get; set; } = 0;
         public string CorrectWord { get; private set; }
         
-        public WordGuessCheck(GameModel gameModel)
+        public WordGuessCheck(GuessGameModel gameModel)
         {
             _gameModel = gameModel;
             this.CorrectWord = WordGuessCheckHelper.GetCorrectWord(gameModel.PotentialWords);
-            this.CorrectWordLength = this.CorrectWord.Length;
+            this.CorrectWordLength = (byte)this.CorrectWord.Length;
         }
 
         public string CheckGuess(string guess)
