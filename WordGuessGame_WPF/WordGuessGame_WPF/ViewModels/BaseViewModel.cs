@@ -1,18 +1,28 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using WordGuessGame_DAL.Context;
+using WordGuessGame_DAL.DataBaseOperation;
 
 namespace WordGuessGame_WPF.ViewModels
 {
     public abstract class BaseViewModel : IDataErrorInfo, INotifyPropertyChanged, ICommand
     {
+        public GameDataManager GameManager { get; set; }
+
+        protected BaseViewModel()
+        {
+            var context = new WordGuessGameEntities();
+            GameManager = new GameDataManager(context);
+        }
+
         public abstract string this[string columnName] { get; }
         public string Error
         {
             get
             {
                 string errorMessages = "";
-                foreach (var item in this.GetType().GetProperties()) //reflection 
+                foreach (var item in GetType().GetProperties()) //reflection 
                 {
                     string error = this[item.Name];
                     if (!string.IsNullOrWhiteSpace(error))
@@ -47,11 +57,10 @@ namespace WordGuessGame_WPF.ViewModels
         }
 
 
-
         //helpers
         public bool IsValid()
         {
-            return string.IsNullOrWhiteSpace(this.Error);
+            return string.IsNullOrWhiteSpace(Error);
         }
     }
 }

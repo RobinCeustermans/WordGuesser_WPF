@@ -1,6 +1,4 @@
 ﻿using System.Windows;
-using WordGuessGame_WPF.ViewModels;
-using WordGuessGame_WPF.ViewModels.Helpers;
 
 namespace WordGuessGame_WPF.Views
 {

@@ -433,3 +433,5 @@ C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_WPF\obj\Debug\ne
 C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_WPF\obj\Debug\net8.0-windows\Views\GameConfigurationWindow.g.cs
 C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_WPF\obj\Debug\net8.0-windows\Views\GameConfigurationWindow.baml
 C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_WPF\bin\Debug\net8.0-windows\Files\words.txt
+C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_WPF\obj\Debug\net8.0-windows\Views\OverviewWindow.g.cs
+C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_WPF\obj\Debug\net8.0-windows\Views\OverviewWindow.baml

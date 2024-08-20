@@ -3,7 +3,6 @@ using WordGuessGame_DAL.FileOperations;
 using WordGuessGame_WPF.Models;
 using WordGuessGame_WPF.ViewModels.Helpers;
 using WordGuessGame_WPF.Views;
-using WordGuessGame_DAL.DataBaseOperation;
 using WordGuessGame_DAL.Context;
 
 namespace WordGuessGame_WPF.ViewModels
@@ -129,9 +128,8 @@ namespace WordGuessGame_WPF.ViewModels
 
             // Create the context and GameDataManager
             var context = new WordGuessGameEntities();
-            var gameDataManager = new GameDataManager(context);
 
-            WordGuesserWindowModel viewModel = new WordGuesserWindowModel(gameChecker, gameDataManager, gameModel);
+            WordGuesserWindowModel viewModel = new WordGuesserWindowModel(gameChecker, GameManager, gameModel);
 
             WordGuesserWindow wordGuesserWindow = new WordGuesserWindow
             {

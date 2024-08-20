@@ -22,7 +22,7 @@
              HorizontalAlignment="Center" VerticalAlignment="Center" Width="100px" />
 
 
-        <Button x:Name="CheckHighscore" Content="Check highscores" Grid.Row="1" Grid.Column="2"
+        <Button x:Name="CheckHighscore" Content="Check highscores" Grid.Row="1" Grid.Column="2" Command="{Binding}" CommandParameter="OpenOverviewPage"
              HorizontalAlignment="Center" VerticalAlignment="Center" Width="100px" />
     </Grid>
 </Window>

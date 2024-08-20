@@ -13,9 +13,47 @@ namespace WordGuessGame_DAL.DataBaseOperation
             _context = context;
         }
 
-        public List<Game> GetGames()
+        public List<Game> GetGames(
+            string? playerName = null,
+            DateTime? start = null,
+            byte? amountOfLetters = null,
+            byte? numberOfTurns = null,
+            byte? amountOfGuesses = null,
+            bool? guessedCorrectly = null)
         {
-            return _context.Games.ToList();
+            var query = _context.Games.AsQueryable();
+
+            if (!string.IsNullOrEmpty(playerName))
+            {
+                query = query.Where(g => g.PlayerName.Contains(playerName));
+            }
+
+            if (start.HasValue)
+            {
+                query = query.Where(g => g.Start.Date == start.Value.Date);
+            }
+
+            if (amountOfLetters.HasValue)
+            {
+                query = query.Where(g => g.AmountOfLetters == amountOfLetters.Value);
+            }
+
+            if (numberOfTurns.HasValue)
+            {
+                query = query.Where(g => g.NumberOfTurns == numberOfTurns.Value);
+            }
+
+            if (amountOfGuesses.HasValue)
+            {
+                query = query.Where(g => g.AmountOfGuesses == amountOfGuesses.Value);
+            }
+
+            if (guessedCorrectly.HasValue)
+            {
+                query = query.Where(g => g.GuessedCorrectly == guessedCorrectly.Value);
+            }
+
+            return query.ToList();
         }
 
         public int SaveGame(Game game)

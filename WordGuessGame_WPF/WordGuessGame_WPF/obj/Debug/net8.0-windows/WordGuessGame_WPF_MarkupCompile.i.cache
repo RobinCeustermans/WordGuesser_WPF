@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\projects\Git\WordGuesser_WPF\WordGuessGame_WPF\WordGuessGame_WPF\App.xaml
-3-1964504786
+4-1049927441
 
-191867264737
+21849789798
 243-1853202291
-Views\GameConfigurationWindow.xaml;Views\MainWindow.xaml;Views\WordGuesserWindow.xaml;
+Views\GameConfigurationWindow.xaml;Views\MainWindow.xaml;Views\OverviewWindow.xaml;Views\WordGuesserWindow.xaml;
 
-True
+False
 

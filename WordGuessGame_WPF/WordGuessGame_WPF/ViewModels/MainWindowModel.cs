@@ -18,6 +18,8 @@ namespace WordGuessGame_WPF.ViewModels
             {
                 case "OpenGameConfiguration":
                     return true;
+                case "OpenOverviewPage":
+                    return true;
                 default:
                     return false;
             }
@@ -32,6 +34,9 @@ namespace WordGuessGame_WPF.ViewModels
             {
                 case "OpenGameConfiguration":
                     OpenGameConfiguration();
+                    break; 
+                case "OpenOverviewPage":
+                    OpenOverviewPage();
                     break;
             }
         }
@@ -40,6 +45,12 @@ namespace WordGuessGame_WPF.ViewModels
         {
             GameConfigurationWindow gameConfigurationWindow = new GameConfigurationWindow();
             gameConfigurationWindow.ShowDialog(); 
+        }
+
+        private void OpenOverviewPage()
+        {
+            OverviewWindow overviewWindow = new OverviewWindow();
+            overviewWindow.ShowDialog();
         }
     }
 }
