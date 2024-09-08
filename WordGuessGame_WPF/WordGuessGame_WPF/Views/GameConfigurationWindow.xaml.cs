@@ -1,5 +1,5 @@
-﻿using System.Text.RegularExpressions;
-using System.Windows;
+﻿using MahApps.Metro.Controls;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Input;
 using WordGuessGame_WPF.ViewModels;
@@ -9,7 +9,7 @@ namespace WordGuessGame_WPF.Views
     /// <summary>
     /// Interaction logic for GameConfigurationWindow.xaml
     /// </summary>
-    public partial class GameConfigurationWindow : Window
+    public partial class GameConfigurationWindow : MetroWindow
     {
         public GameConfigurationWindow()
         {

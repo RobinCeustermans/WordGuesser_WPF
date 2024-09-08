@@ -1,7 +1,9 @@
-﻿<Window x:Class="WordGuessGame_WPF.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="WordGuesser" Height="450" Width="800">
+﻿<mah:MetroWindow x:Class="WordGuessGame_WPF.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 Title="WordGuesser" Height="450" Width="800">
+
     <Grid>
         <!-- Define the rows and columns -->
         <Grid.RowDefinitions>
@@ -9,20 +11,26 @@
             <RowDefinition Height="350" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
 
         <!-- Place some example elements in the grid -->
         <TextBlock Text="Welcome, play a game or check the high scores" Grid.Row="0" Grid.Column="1" 
-                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="16" FontWeight="Bold" Margin="20"/>
 
-        <Button x:Name="PlayGame" Content="Play game" Grid.Row="1" Grid.Column="0" Command="{Binding}" CommandParameter="OpenGameConfiguration"
-             HorizontalAlignment="Center" VerticalAlignment="Center" Width="100px" />
+        <!-- Play Game Button -->
+        <Button x:Name="PlayGame" Content="Play Game" Grid.Row="1" Grid.Column="0" Command="{Binding}" CommandParameter="OpenGameConfiguration"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="150" Height="50"
+                Style="{StaticResource CustomButtonStyle}"/>
 
-
-        <Button x:Name="CheckHighscore" Content="Check highscores" Grid.Row="1" Grid.Column="2" Command="{Binding}" CommandParameter="OpenOverviewPage"
-             HorizontalAlignment="Center" VerticalAlignment="Center" Width="100px" />
+        <!-- High Scores Button -->
+        <Button x:Name="CheckHighscore" Content="Check High Scores" Grid.Row="1" Grid.Column="2" Command="{Binding}" CommandParameter="OpenOverviewPage"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="150" Height="50"
+                Style="{StaticResource CustomButtonStyle}"/>
     </Grid>
-</Window>
+</mah:MetroWindow>

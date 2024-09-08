@@ -1,12 +1,11 @@
-﻿using System.Windows;
-using WordGuessGame_WPF.ViewModels;
+﻿using MahApps.Metro.Controls;
 
 namespace WordGuessGame_WPF.Views
 {
     /// <summary>
     /// Interaction logic for OverviewWindow.xaml
     /// </summary>
-    public partial class OverviewWindow : Window
+    public partial class OverviewWindow : MetroWindow
     {
         public OverviewWindow()
         {

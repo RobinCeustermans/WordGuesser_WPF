@@ -1,9 +1,9 @@
-﻿using System.Windows;
+﻿using MahApps.Metro.Controls;
 using WordGuessGame_WPF.ViewModels;
 
 namespace WordGuessGame_WPF
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {

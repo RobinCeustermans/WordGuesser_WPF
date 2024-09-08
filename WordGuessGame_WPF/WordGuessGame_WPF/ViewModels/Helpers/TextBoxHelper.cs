@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace WordGuessGame_WPF.ViewModels.Helpers
 {
@@ -19,6 +20,9 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
                 VerticalAlignment = VerticalAlignment.Center,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
                 VerticalContentAlignment = VerticalAlignment.Center,
+                Background = Brushes.LightGray,
+                Foreground = Brushes.Black,
+                BorderBrush = Brushes.DarkGray,
                 MaxLength = 1,
                 IsEnabled = false // Initially disable all TextBoxes
             };
@@ -87,6 +91,7 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
                 {
                     textBoxes[i].IsEnabled = true;
                     textBoxes[i].Text = "";  // Clear previous guess
+                    textBoxes[i].Background = Brushes.White;
                 }
             }
         }
@@ -120,6 +125,7 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
             foreach (var textBox in textBoxes)
             {
                 textBox.IsEnabled = false;
+                textBox.Background = Brushes.Tan;
             }
         }
 
