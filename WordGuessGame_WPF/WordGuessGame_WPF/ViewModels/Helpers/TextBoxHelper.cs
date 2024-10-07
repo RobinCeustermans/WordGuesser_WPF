@@ -24,7 +24,7 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
                 Foreground = Brushes.Black,
                 BorderBrush = Brushes.DarkGray,
                 MaxLength = 1,
-                IsEnabled = false // Initially disable all TextBoxes
+                IsEnabled = false
             };
 
             textBox.TextChanged += textChangedHandler;
@@ -90,7 +90,7 @@ namespace WordGuessGame_WPF.ViewModels.Helpers
                 if (i < textBoxes.Count)
                 {
                     textBoxes[i].IsEnabled = true;
-                    textBoxes[i].Text = "";  // Clear previous guess
+                    textBoxes[i].Text = ""; 
                     textBoxes[i].Background = Brushes.White;
                 }
             }

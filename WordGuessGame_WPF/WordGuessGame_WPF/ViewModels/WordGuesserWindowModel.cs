@@ -16,6 +16,7 @@ public class WordGuesserWindowModel : BaseViewModel
     private ObservableCollection<TextBox> _guessTextBoxes;
     private string _statusTextBlock;
     private bool _isSubmitButtonEnabled;
+    private bool _isGameFinished;
 
     public GuessGameModel CurrentGame { get; private set; }
     public Game Game { get; private set; }
@@ -50,6 +51,16 @@ public class WordGuesserWindowModel : BaseViewModel
         }
     }
 
+    public bool IsGameFinished 
+    {
+        get => _isGameFinished;
+        set
+        {
+            _isGameFinished = value;
+            NotifyPropertyChanged(nameof(IsGameFinished));
+        }
+    }
+
     public override string this[string columnName] => string.Empty;
 
     public WordGuesserWindowModel(IWordGuessCheck gameCheck, GameDataManager gameDataManager, GuessGameModel gameModel)
@@ -57,15 +68,21 @@ public class WordGuesserWindowModel : BaseViewModel
         _gameCheck = gameCheck;
         _gameDataManager = gameDataManager;
         CurrentGame = gameModel;
+        BeginNewGame();     
+    }
 
-        InitializeGuessGrid();
+    private void BeginNewGame()
+    {
+        _gameCheck.CurrentAttempt = 0;
         InitializeGame();
+        InitializeGuessGrid();
         IsSubmitButtonEnabled = true;
+        IsGameFinished = false;
     }
 
     private void InitializeGuessGrid()
     {
-        _guessTextBoxes = new ObservableCollection<TextBox>();
+        GuessTextBoxes = new ObservableCollection<TextBox>();
 
         for (int i = 0; i < CurrentGame.TurnsAmount * CurrentGame.WordLength; i++)
         {
@@ -87,12 +104,25 @@ public class WordGuesserWindowModel : BaseViewModel
         };
     }
 
+    private void StartNewGame()
+    {
+        BeginNewGame();
+
+        IsSubmitButtonEnabled = true;
+        IsGameFinished = false;
+
+        // Clear status text
+        StatusTextBlock = "";
+    }
+
     private void FinishGame(bool correctlyGuessed)
     {
         Game.End = DateTime.Now;
         Game.GuessedCorrectly = correctlyGuessed;
         Game.CorrectWord = _gameCheck.CorrectWord;
         Game.AmountOfGuesses = _gameCheck.CurrentAttempt;
+        IsSubmitButtonEnabled = false;
+        IsGameFinished = true;
     }
 
     private void TextBoxPreviewKeyDownHandler(object sender, KeyEventArgs e)
@@ -209,7 +239,7 @@ public class WordGuesserWindowModel : BaseViewModel
 
     public override bool CanExecute(object? parameter)
     {
-        return parameter?.ToString() == "SubmitGuess";
+        return parameter?.ToString() == "SubmitGuess" || parameter?.ToString() == "StartNewGame";
     }
 
     public override void Execute(object? parameter)
@@ -217,6 +247,10 @@ public class WordGuesserWindowModel : BaseViewModel
         if (parameter?.ToString() == "SubmitGuess")
         {
             SubmitGuess();
+        }
+        else if (parameter?.ToString() == "StartNewGame")
+        {
+            StartNewGame();
         }
     }
 }
